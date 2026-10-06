@@ -1,0 +1,104 @@
+{
+  "note": "Subject names students around the world actually search for. The picker uses this for autocomplete, and the planner falls back to free text.",
+  "groups": [
+    {
+      "region": "West Africa",
+      "systems": "WAEC, NECO, BECE, JAMB, NUTSS, Ghana / Nigeria / Sierra Leone",
+      "subjects": [
+        "Mathematics", "Mathematics (Elective)", "English Language", "Literature in English",
+        "Biology", "Chemistry", "Physics", "Agricultural Science", "Geography",
+        "Government", "Economics", "Financial Accounting", "Commercial Accounting",
+        "Business Management", "Marketing", "Computer Science", "ICT", "Data Processing",
+        "Basic Technology", "Civic Education", "Social Studies", "Religious Studies",
+        "History", "Fine Arts", "Music", "Physical Education", "Food and Nutrition",
+        "Home Economics", "Technical Drawing", "Building Technology", "Welding", "Carpentry",
+        "Electronics", "Electrical Installation", "Mechanical Engineering", "Auto Mechanics",
+        "Mining Engineering", "Further Mathematics", "Christian Religious Studies",
+        "Islamic Studies", "Arabic", "French", "German", "Spanish", "Chinese",
+        "Philosophy", "Logic", "Psychology", "Humanities", "Peace and Conflict Studies"
+      ]
+    },
+    {
+      "region": "East Africa",
+      "systems": "KCSE, UACE / Uganda, Tanzania, Rwanda, Kenya",
+      "subjects": [
+        "Mathematics", "English Literature", "English Language", "Kiswahili",
+        "Biology", "Chemistry", "Physics", "Agriculture", "Geography", "History",
+        "Government", "Economics", "Commerce", "Accounting", "Business Studies",
+        "Computer Studies", "ICT", "Home Science", "Art and Design", "Music",
+        "Physical Education", "Religious Studies", "French", "German", "Latin"
+      ]
+    },
+    {
+      "region": "Southern Africa",
+      "systems": "National Senior Certificate (South Africa), Zimbabwe, Zambia, Namibia",
+      "subjects": [
+        "Mathematics", "English Home Language", "English First Additional Language",
+        "Afrikaans", "IsiZulu", "Sesotho", "Setswana", "Xhosa", "Sepedi",
+        "Life Sciences", "Physical Sciences", "Social Sciences", "Economic and Management Sciences",
+        "Tourism", "Hospitality", "Consumer Studies", "Visual Arts", "Performing Arts",
+        "Technology", "Mathematical Literacy", "Natural Sciences", "History", "Geography"
+      ]
+    },
+    {
+      "region": "United Kingdom",
+      "systems": "GCSE, A Level, BTEC, National 5 / Higher",
+      "subjects": [
+        "English Language", "English Literature", "Mathematics", "Further Mathematics",
+        "Biology", "Chemistry", "Physics", "Combined Science", "Computer Science",
+        "Economics", "Business", "Business Studies", "Psychology", "Sociology",
+        "History", "Geography", "Religious Studies", "Modern Foreign Languages",
+        "French", "German", "Spanish", "Art and Design", "Music", "Design Technology",
+        "Food and Nutrition", "Physical Education", "Media Studies", "Film Studies",
+        "Drama", "Latin", "Classical Civilisation", "IT", "Astronomy"
+      ]
+    },
+    {
+      "region": "United States and Canada",
+      "systems": "SAT, ACT, AP, IB, US K-12, Ontario, Alberta",
+      "subjects": [
+        "English Language Arts", "English Literature", "Mathematics", "Algebra", "Algebra II",
+        "Geometry", "Pre-Calculus", "Calculus", "Statistics", "Trigonometry",
+        "Biology", "Anatomy and Physiology", "Environmental Science", "Chemistry",
+        "Chemistry II", "Physics", "Astronomy", "Earth Science",
+        "US History", "World History", "European History", "Government and Politics",
+        "Economics", "Microeconomics", "Macroeconomics", "Psychology",
+        "Sociology", "Philosophy", "World Languages", "Spanish", "French", "Mandarin",
+        "Computer Science", "AP Computer Science A", "AP Computer Science Principles",
+        "Data Structures", "Machine Learning", "Art History", "Studio Art", "Music Theory",
+        "Health", "Physical Education", "Environmental Science", "Journalism"
+      ]
+    },
+    {
+      "region": "Asia Pacific",
+      "systems": "CBSE / ICSE (India), HSC (Bangladesh), SPM (Malaysia), HSC (Singapore), VCE",
+      "subjects": [
+        "Mathematics", "Mathematics Standard", "Mathematics Extended", "Additional Mathematics",
+        "English Language", "English Literature", "Physics", "Chemistry", "Biology",
+        "Environmental Science", "Computer Science", "Informatics Practices",
+        "Economics", "Business Studies", "Accountancy", "Psychology", "Sociology",
+        "Political Science", "History", "Geography", "Philosophy", "Religious Studies",
+        "Fine Arts", "Music", "Physical Education", "Home Science", "Food Technology",
+        "Design and Technology", "Chinese", "Mandarin", "Japanese", "French", "German",
+        "Malay Language", "Tamil", "Sanskrit", "Library and Information Science"
+      ]
+    },
+    {
+      "region": "Europe and Latin America",
+      "systems": "Abitur, Baccalauréat, Bachillerato, ENS",
+      "subjects": [
+        "Mathematics", "Advanced Mathematics", "Physics", "Chemistry", "Biology",
+        "Earth Science", "Computer Science", "Economics", "Business Studies",
+        "History", "Geography", "Political Science", "Philosophy", "Psychology",
+        "Sociology", "Spanish", "French", "German", "Italian", "Portuguese", "Latin",
+        "Literature", "Art History", "Music", "Physical Education", "Design Technology"
+      ]
+    }
+  ],
+  "special": [
+    "Exam Preparation", "Mock Exams", "Past Papers", "Revision", "Study Skills",
+    "Essay Writing", "Creative Writing", "Public Speaking", "Research Project",
+    "Languages", "Coding", "Web Development", "Graphic Design", "Music Theory",
+    "Personal Development", "Time Management"
+  ]
+}

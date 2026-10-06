@@ -1,0 +1,360 @@
+/* ================================================================
+   ADMIN CONSOLE
+   Built on the same tokens as the app so it follows the same theme.
+   ================================================================ */
+
+.admin-body { background: var(--bg); }
+
+.admin-shell { display: grid; grid-template-columns: 250px 1fr; min-height: 100vh; }
+
+/* ---------- Sidebar ---------- */
+
+.admin-side {
+  background: var(--sidebar-bg);
+  color: var(--sidebar-ink);
+  padding: 1.5rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.admin-side .brand-logo { color: var(--sidebar-ink); margin-bottom: .2rem; }
+
+.admin-tag {
+  font-size: .68rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .5);
+  margin-top: -.9rem;
+}
+
+.admin-nav { display: flex; flex-direction: column; gap: .25rem; flex: 1; }
+
+.admin-link {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  width: 100%;
+  text-align: left;
+  padding: .65rem .8rem;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: rgba(255, 255, 255, .72);
+  font-size: .92rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.admin-link svg { width: 18px; height: 18px; flex-shrink: 0; }
+.admin-link:hover { background: var(--sidebar-hover); color: #fff; }
+.admin-link.active { background: var(--primary); color: #fff; font-weight: 500; }
+
+.admin-count {
+  margin-left: auto;
+  min-width: 20px;
+  padding: .1rem .35rem;
+  border-radius: 20px;
+  background: var(--red);
+  color: #fff;
+  font-size: .7rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.admin-side-foot { display: flex; flex-direction: column; gap: .6rem; }
+.admin-side-foot .logout-btn {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+/* ---------- Main ---------- */
+
+.admin-main { min-width: 0; display: flex; flex-direction: column; }
+
+.admin-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.8rem;
+  background: var(--surface-glass);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.admin-topbar h1 { font-size: 1.25rem; font-weight: 600; color: var(--ink); }
+
+.admin-env { display: flex; gap: .35rem; flex-wrap: wrap; justify-content: flex-end; }
+
+.admin-body { padding: 1.8rem; }
+.admin-panel { display: none; }
+.admin-panel.active { display: block; }
+
+/* ---------- Tables ---------- */
+
+.admin-badge {
+  display: inline-block;
+  padding: .18rem .55rem;
+  border-radius: 20px;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .3px;
+  white-space: nowrap;
+}
+
+.table-wrap {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+}
+
+table.data {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .88rem;
+  min-width: 720px;
+}
+
+table.data th {
+  text-align: left;
+  padding: .8rem 1rem;
+  font-weight: 500;
+  font-size: .74rem;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+table.data td {
+  padding: .75rem 1rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-2);
+  vertical-align: middle;
+}
+
+table.data tbody tr:last-child td { border-bottom: none; }
+table.data tbody tr:hover { background: var(--surface-2); }
+
+.cell-main { display: flex; flex-direction: column; }
+.cell-main strong { color: var(--ink); font-weight: 500; }
+.cell-main span { font-size: .78rem; color: var(--ink-3); }
+
+.row-actions { display: flex; gap: .35rem; flex-wrap: wrap; justify-content: flex-end; }
+
+.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.muted { color: var(--ink-3); font-size: .8rem; }
+
+/* ---------- Charts ---------- */
+
+.bars { display: flex; align-items: flex-end; gap: .4rem; height: 130px; padding-top: .5rem; }
+.bars .bar-col { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: .35rem; height: 100%; }
+.bars .bar {
+  width: 100%;
+  max-width: 34px;
+  background: var(--brand-grad);
+  border-radius: 5px 5px 0 0;
+  min-height: 3px;
+  transition: height .4s ease;
+}
+.bars .bar-lbl { font-size: .65rem; color: var(--ink-3); white-space: nowrap; }
+
+.split-lists { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1.4rem; }
+
+.tag-list { display: flex; flex-wrap: wrap; gap: .45rem; }
+.tag-list .tag {
+  background: var(--surface-2);
+  border-radius: 20px;
+  padding: .3rem .8rem;
+  font-size: .82rem;
+  color: var(--ink-2);
+}
+.tag-list .tag b { color: var(--primary); margin-left: .3rem; }
+
+.log-list { display: flex; flex-direction: column; gap: .5rem; max-height: 320px; overflow-y: auto; }
+.log-row {
+  display: flex;
+  gap: .7rem;
+  align-items: baseline;
+  font-size: .82rem;
+  padding: .45rem .6rem;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+}
+.log-row code { font-size: .75rem; color: var(--primary); }
+.log-row time { margin-left: auto; color: var(--ink-3); font-size: .72rem; white-space: nowrap; }
+
+/* ---------- Filters ---------- */
+
+.filter-bar {
+  display: flex;
+  gap: .6rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.2rem;
+}
+.filter-bar input[type="search"] {
+  flex: 1;
+  min-width: 220px;
+  padding: .55rem .85rem;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: .9rem;
+  font-family: inherit;
+}
+.filter-bar input[type="search"]:focus { outline: none; border-color: var(--primary); }
+
+/* ---------- Payment cards ---------- */
+
+.pay-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.1rem; }
+
+.pay-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--amber);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  box-shadow: var(--shadow-sm);
+}
+.pay-card.verified { border-left-color: var(--green); }
+.pay-card.rejected { border-left-color: var(--red); opacity: .78; }
+
+.pay-amount { font-size: 1.6rem; font-weight: 700; color: var(--ink); }
+.pay-ref { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: .84rem; color: var(--ink); }
+.pay-meta { display: flex; flex-direction: column; gap: .2rem; margin: .8rem 0 1rem; font-size: .82rem; color: var(--ink-3); }
+.pay-note { font-size: .8rem; color: var(--ink-2); background: var(--surface-2); padding: .5rem .65rem; border-radius: var(--radius-sm); margin-bottom: .9rem; }
+.pay-actions { display: flex; gap: .5rem; }
+.pay-actions button { flex: 1; }
+
+/* ---------- Settings ---------- */
+
+.settings-form { max-width: 620px; }
+.env-list { display: flex; flex-direction: column; gap: .35rem; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: .8rem; }
+.env-list .env-row { display: flex; justify-content: space-between; gap: 1rem; padding: .35rem 0; border-bottom: 1px dashed var(--line); }
+.env-list .env-row span:last-child { color: var(--ink-3); }
+
+.switch-row { display: flex; align-items: center; gap: .7rem; }
+.switch-row input { width: 18px; height: 18px; accent-color: var(--primary); cursor: pointer; }
+
+/* ---------- Code gate ----------
+   .code-card, .code-logo and the input styling live in styles.css, which the
+   admin page also loads. Only the full-screen shell is unique to this page. */
+
+.code-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background: var(--sidebar-bg);
+  /* Keeps the locked console faintly visible behind the card. */
+  backdrop-filter: blur(6px);
+}
+.code-gate[hidden] { display: none; }
+
+#codeSubmit { width: 100%; }
+.code-card .save-state { text-align: center; }
+
+/* ---------- Code rows ---------- */
+
+.code-out {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: .9rem 0 .4rem;
+  padding: .9rem;
+  border: 1px dashed var(--line-2);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+}
+.code-out code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: .92rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  padding: .3rem .55rem;
+  border-radius: 7px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  user-select: all;
+}
+
+.code-table td code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  letter-spacing: .06em;
+  user-select: all;
+}
+.code-table tr.spent { opacity: .55; }
+.code-state { font-size: .72rem; font-weight: 600; padding: .15rem .5rem; border-radius: 999px; }
+.code-state.open { background: var(--green-soft, #e6f7ef); color: var(--green); }
+.code-state.used { background: var(--surface-2); color: var(--ink-3); }
+.code-state.expired { background: rgba(239, 68, 68, .12); color: var(--red); }
+.code-state.revoked { background: rgba(239, 68, 68, .12); color: var(--red); }
+
+.code-form-row { display: flex; gap: .6rem; flex-wrap: wrap; align-items: flex-end; margin-bottom: 1.2rem; }
+.code-form-row .field { display: flex; flex-direction: column; gap: .3rem; }
+.code-form-row .field span { font-size: .76rem; font-weight: 600; color: var(--ink-2); }
+.code-form-row input, .code-form-row select {
+  padding: .5rem .7rem;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: .88rem;
+  font-family: inherit;
+}
+.code-form-row input:focus, .code-form-row select:focus { outline: none; border-color: var(--primary); }
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .admin-shell { grid-template-columns: 1fr; }
+  .admin-side {
+    position: static;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .8rem;
+  }
+  .admin-tag { margin-top: 0; }
+  .admin-nav { flex-direction: row; flex-wrap: wrap; flex: 1 1 100%; }
+  .admin-link { width: auto; }
+  .admin-side-foot { flex-direction: row; align-items: center; gap: .5rem; }
+  .admin-side-foot .side-user { margin: 0; }
+  .split-lists { grid-template-columns: 1fr; }
+  .admin-body { padding: 1.2rem; }
+}
+
+/* Phones. The admin area is usable on one, mostly because the tables scroll
+   sideways inside .table-wrap rather than forcing the page wide. */
+@media (max-width: 560px) {
+  .admin-topbar { flex-wrap: wrap; gap: .6rem; }
+  .admin-topbar h1 { font-size: 1.2rem; }
+  .admin-body { padding: 1rem .9rem; }
+  .stat-grid { grid-template-columns: 1fr 1fr; }
+  .stat-value { font-size: 1.35rem; }
+  .admin-link { font-size: .85rem; padding: .5rem .7rem; }
+
+  /* The create-codes row would otherwise wrap into one field per line. */
+  .code-form-row { flex-direction: column; align-items: stretch; }
+  .code-form-row input, .code-form-row select, .code-form-row .btn-primary { width: 100% !important; }
+
+  .code-out { padding: .7rem; }
+  .code-out code { font-size: .8rem; letter-spacing: .04em; }
+  .lt-hero-value { font-size: 2rem; }
+}

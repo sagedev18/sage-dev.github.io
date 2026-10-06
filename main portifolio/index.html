@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sage Dev — Personal Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#home">Sage<span>Dev</span></a>
+      <nav class="site-nav" id="nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <img src="../images/me.jpg" alt="Sage Dev" class="profile-pic">
+    <h1>Hi, I'm <span class="accent">Sage Dev</span></h1>
+    <p class="lead">Student &middot; Web Developer &middot; Creator</p>
+    <p class="hero-text">I build clean, simple websites and small web apps. Currently learning, shipping projects, and saving up for my first real income.</p>
+    <a class="btn btn-primary" href="#projects">View My Work</a>
+    <a class="btn btn-ghost" href="#contact">Get In Touch</a>
+  </section>
+
+  <!-- About -->
+  <section class="section" id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>Who I am</h3>
+        <p>I'm Sage, an 18-year-old student who enjoys turning ideas into working web pages. I care about clean code, readable layouts, and pages that load fast on any device.</p>
+      </div>
+      <div class="about-card">
+        <h3>What I do</h3>
+        <p>I design and build front-end websites, write small JavaScript projects, and I'm currently working on a full school website with multiple pages, forms, and responsive layouts.</p>
+      </div>
+      <div class="about-card">
+        <h3>What I'm aiming for</h3>
+        <p>To grow my skills, take on real client work, earn my own income, and make my parents proud of the path I'm taking.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="section section-alt" id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>HTML</h3>
+        <div class="bar"><span style="width:90%"></span></div>
+        <p>Semantic, accessible page structure</p>
+      </div>
+      <div class="skill-card">
+        <h3>CSS</h3>
+        <div class="bar"><span style="width:85%"></span></div>
+        <p>Flexbox, Grid, responsive design, animation</p>
+      </div>
+      <div class="skill-card">
+        <h3>JavaScript</h3>
+        <div class="bar"><span style="width:70%"></span></div>
+        <p>DOM, async/fetch, timers, client-side state</p>
+      </div>
+      <div class="skill-card">
+        <h3>Node &amp; Express</h3>
+        <div class="bar"><span style="width:55%"></span></div>
+        <p>REST APIs, JWT auth, SQLite databases</p>
+      </div>
+      <div class="skill-card">
+        <h3>Git</h3>
+        <div class="bar"><span style="width:55%"></span></div>
+        <p>Version control and branches</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="section" id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="project-grid">
+      <article class="project-card">
+        <div class="project-thumb">
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=900&q=70" alt="Classroom and school building" loading="lazy">
+        </div>
+        <h3>School Website</h3>
+        <p>Multi-page school site with class pages, fees table, teacher profiles and a contact form.</p>
+        <a class="link" href="../school-website/index.html">View project &rarr;</a>
+      </article>
+      <article class="project-card">
+        <div class="project-thumb">
+          <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=900&q=70" alt="Code on a laptop screen" loading="lazy">
+        </div>
+        <h3>Personal Portfolio</h3>
+        <p>This site. Simple HTML and CSS with a responsive one-page layout.</p>
+        <a class="link" href="index.html">View project &rarr;</a>
+      </article>
+      <article class="project-card">
+        <div class="project-thumb">
+          <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?w=900&q=70" alt="Student studying at a desk" loading="lazy">
+        </div>
+        <h3>StudyFlow</h3>
+        <p>Full-stack study planner with user accounts, Pomodoro focus tracking, notes, flashcards and exam countdowns.</p>
+        <a class="link" href="http://localhost:3000/showcase">View project &rarr;</a>
+      </article>
+    </div>
+
+    <!-- Shortcuts into everything -->
+    <div class="launch-panel">
+      <h3 class="launch-title">Open a project</h3>
+      <p class="launch-sub">Or use the launcher files in the "open files" folder, which start anything that needs a server.</p>
+      <div class="launch-grid">
+        <a class="launch-item" href="http://localhost:3000/showcase">
+          <strong>StudyFlow showcase</strong>
+          <span>The front page for StudyFlow</span>
+        </a>
+        <a class="launch-item" href="http://localhost:3000/index.html">
+          <strong>StudyFlow app</strong>
+          <span>Sign in and start studying</span>
+        </a>
+        <a class="launch-item" href="../school-website/index.html">
+          <strong>School website</strong>
+          <span>Static, opens straight away</span>
+        </a>
+        <a class="launch-item" href="index.html">
+          <strong>This portfolio</strong>
+          <span>You are already here</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section section-alt" id="contact">
+    <h2 class="section-title">Contact</h2>
+    <p class="contact-text">Want to work together, or just want to say hello? Get in touch.</p>
+    <div class="contact-links">
+      <a class="contact-item" href="mailto:sagedominic255@gmail.com">
+        <strong>Email</strong>
+        <span>sagedominic255@gmail.com</span>
+      </a>
+      <a class="contact-item" href="tel:+2347072907758">
+        <strong>Phone</strong>
+        <span>+234 707 290 7758</span>
+      </a>
+      <a class="contact-item" href="https://github.com/SAGE_DEV" target="_blank" rel="noopener">
+        <strong>GitHub</strong>
+        <span>SAGE_DEV</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Sage Dev. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

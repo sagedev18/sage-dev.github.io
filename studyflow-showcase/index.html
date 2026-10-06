@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyFlow Showcase</title>
+    <meta name="description" content="A tour of StudyFlow, the study planner built for students.">
+    <link rel="stylesheet" href="css/showcase.css">
+</head>
+<body>
+
+    <header class="nav">
+        <span class="wordmark">
+            <span class="wordmark-mark">SF</span>
+            StudyFlow
+        </span>
+        <nav class="nav-links">
+            <a href="#tour">Tour</a>
+            <a href="#features">Features</a>
+            <a href="#numbers">Numbers</a>
+            <a href="#privacy">Privacy</a>
+            <a class="nav-cta" href="#start">Try it</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">Study planner for students</p>
+                <h1>Plan it once.<br>Stop wondering where the day went.</h1>
+                <p class="lede">
+                    StudyFlow holds your subjects, deadlines, notes, revision sessions and mock exams in
+                    one place, then tells you honestly whether you are on track or quietly falling behind.
+                </p>
+                <div class="hero-actions">
+                    <a class="btn-primary" href="#start">Start studying</a>
+                    <a class="btn-soft" href="#tour">See what is inside</a>
+                </div>
+                <p class="hero-fine">Free plan available. No card needed to begin.</p>
+            </div>
+
+            <!-- The app, drawn in CSS -->
+            <div class="hero-app" aria-hidden="true">
+                <div class="app-window">
+                    <div class="app-bar">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                    </div>
+                    <div class="app-body">
+                        <div class="app-side">
+                            <span class="side-item on"></span>
+                            <span class="side-item"></span>
+                            <span class="side-item"></span>
+                            <span class="side-item"></span>
+                            <span class="side-item"></span>
+                        </div>
+                        <div class="app-main">
+                            <div class="app-tiles">
+                                <div class="tile"><b>2h 40m</b><span>Focused today</span></div>
+                                <div class="tile"><b>14h 5m</b><span>This week</span></div>
+                                <div class="tile"><b>8 / 12</b><span>Tasks done</span></div>
+                            </div>
+                            <div class="app-chart">
+                                <span style="--h:38%"></span>
+                                <span style="--h:62%"></span>
+                                <span style="--h:45%"></span>
+                                <span style="--h:88%"></span>
+                                <span style="--h:54%"></span>
+                                <span style="--h:71%"></span>
+                                <span class="on" style="--h:96%"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tour -->
+        <section class="band" id="tour">
+            <div class="band-head">
+                <h2>Six things, and nothing else</h2>
+                <p>Every screen exists because a student needs it, not because a feature list looked impressive.</p>
+            </div>
+
+            <div class="tour-grid">
+                <article class="tour-item">
+                    <span class="tour-num">01</span>
+                    <h3>Planner</h3>
+                    <p>Subjects, tasks and due dates. Sort by what is closest, tick things off, and the list reorders itself.</p>
+                </article>
+                <article class="tour-item">
+                    <span class="tour-num">02</span>
+                    <h3>Focus timer</h3>
+                    <p>A Pomodoro that logs itself. Sessions build up into a chart so you can see the weeks you actually worked.</p>
+                </article>
+                <article class="tour-item">
+                    <span class="tour-num">03</span>
+                    <h3>Notes</h3>
+                    <p>One note per topic, tagged to a subject. Written plainly, so they are useful at 2am the night before.</p>
+                </article>
+                <article class="tour-item">
+                    <span class="tour-num">04</span>
+                    <h3>Flashcards</h3>
+                    <p>Decks with a know or do not know answer. Cards you keep missing resurface on their own.</p>
+                </article>
+                <article class="tour-item">
+                    <span class="tour-num">05</span>
+                    <h3>Exams and syllabus</h3>
+                    <p>A live countdown per exam, with a topic checklist so nothing in the syllabus gets quietly skipped.</p>
+                </article>
+                <article class="tour-item">
+                    <span class="tour-num">06</span>
+                    <h3>Statistics</h3>
+                    <p>Lifetime totals that never reset. The honest answer to whether the effort is landing.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="band alt" id="features">
+            <div class="band-head">
+                <h2>What is on free, and what is premium</h2>
+                <p>The free plan is a complete study tool. Premium adds the parts that need a server.</p>
+            </div>
+
+            <div class="plan-grid">
+                <div class="plan">
+                    <p class="plan-name">Free</p>
+                    <p class="plan-price">&#8358;0</p>
+                    <ul class="plan-list">
+                        <li class="on">Subjects and tasks</li>
+                        <li class="on">Focus timer with history</li>
+                        <li class="on">Notes and flashcards</li>
+                        <li class="on">Exams, countdowns and syllabus</li>
+                        <li class="on">Statistics and streaks</li>
+                        <li class="on">Works offline</li>
+                    </ul>
+                </div>
+
+                <div class="plan featured">
+                    <span class="plan-flag">Most useful</span>
+                    <p class="plan-name">Premium</p>
+                    <p class="plan-price">&#8358;3,500<small> once</small></p>
+                    <ul class="plan-list">
+                        <li class="on">Everything in Free</li>
+                        <li class="on">AI assistant that reads your own notes</li>
+                        <li class="on">Quizzes generated from your syllabus</li>
+                        <li class="on">Topic progression and weak-spot tracking</li>
+                        <li class="on">Full data export</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Numbers -->
+        <section class="band" id="numbers">
+            <div class="band-head">
+                <h2>Built on boring, reliable parts</h2>
+                <p>No accounts held by anyone else, no tracking, no data leaving the machine.</p>
+            </div>
+
+            <div class="stat-row">
+                <div class="stat">
+                    <b>9</b>
+                    <span>study tools in one app</span>
+                </div>
+                <div class="stat">
+                    <b>1</b>
+                    <span>SQLite file, yours alone</span>
+                </div>
+                <div class="stat">
+                    <b>0</b>
+                    <span>ads or third party trackers</span>
+                </div>
+                <div class="stat">
+                    <b>&#8358;3,500</b>
+                    <span>one off, never a subscription</span>
+                </div>
+            </div>
+
+            <div class="stack-note">
+                <h3>What it is made of</h3>
+                <p>Node.js and Express on the server, SQLite for storage, and plain JavaScript in the browser. No build step, no framework, nothing that has to be recompiled to fix a bug.</p>
+            </div>
+        </section>
+
+        <!-- Privacy -->
+        <section class="band alt" id="privacy">
+            <div class="privacy-grid">
+                <div>
+                    <h2>Your notes are nobody else's business</h2>
+                    <p class="lede">
+                        Every account is separate. One student cannot see another student's subjects, notes or
+                        exam dates, and that is enforced on the server rather than hidden in the interface.
+                    </p>
+                </div>
+                <ul class="privacy-list">
+                    <li>Accounts are isolated at the database level</li>
+                    <li>Admins see accounts, never a student's notes</li>
+                    <li>Entering the admin console needs a single-use code</li>
+                    <li>Passwords are hashed, never stored as text</li>
+                    <li>Export or delete everything whenever you like</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Start -->
+        <section class="band start" id="start">
+            <h2>Open it and start with one subject</h2>
+            <p>Five minutes to set up, and the first useful thing you can do takes about thirty seconds.</p>
+            <div class="start-actions">
+                <a class="btn-primary" href="http://localhost:3000/index.html">Create a free account</a>
+                <a class="btn-soft" href="#tour">Read the tour again</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="foot">
+        <span class="wordmark">
+            <span class="wordmark-mark">SF</span>
+            StudyFlow
+        </span>
+        <p>A student study planner. Built to be plain and to keep working.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - StudyFlow</title>
+    <link rel="icon" href="/icons/icon-192.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="app-body admin-body">
+
+    <div class="admin-shell">
+
+        <aside class="admin-side">
+            <span class="brand-logo" role="img" aria-label="StudyFlow">
+                <img src="/img/logo.svg" alt="">
+                <span class="logo-text">Study<span class="accent">Flow</span></span>
+            </span>
+            <span class="admin-tag">Admin console</span>
+
+            <nav class="admin-nav">
+                <button class="admin-link active" data-tab="overview" type="button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="8.5" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="5.5" rx="1.5"/><rect x="13.5" y="12" width="7.5" height="9" rx="1.5"/><rect x="3" y="15" width="7.5" height="6" rx="1.5"/></svg>
+                    Overview
+                </button>
+                <button class="admin-link" data-tab="users" type="button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M17 11.5a3 3 0 1 0 0-6M18 20a5.5 5.5 0 0 0-2.5-4.6"/></svg>
+                    Users
+                </button>
+                <button class="admin-link" data-tab="payments" type="button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="2.5"/><path d="M2.5 10h19"/></svg>
+                    Payments
+                    <span class="admin-count" id="pendingBadge" hidden>0</span>
+                </button>
+                <button class="admin-link" data-tab="settings" type="button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.2 5.2l2.1 2.1M16.7 16.7l2.1 2.1M18.8 5.2l-2.1 2.1M7.3 16.7l-2.1 2.1"/></svg>
+                    Store settings
+                </button>
+                <button class="admin-link" data-tab="codes" type="button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="11" height="12" rx="2"/><path d="M16.5 9.5a4 4 0 0 1 5.5 5.5l-3 3 2 2-1.8 1.8-2-2-3 3-2-2 3-3a4 4 0 0 1-5.5-5.5l2.8 2.8"/></svg>
+                    Access codes
+                    <span class="admin-count" id="codesBadge" hidden>0</span>
+                </button>
+            </nav>
+
+            <div class="admin-side-foot">
+                <div class="side-user">
+                    <span class="avatar" id="adminAvatar">A</span>
+                    <div class="side-user-text">
+                        <strong id="adminName">Admin</strong>
+                        <span id="adminEmail"></span>
+                    </div>
+                </div>
+                <a class="logout-btn" href="/dashboard.html">Back to app</a>
+                <button class="logout-btn" id="adminLock" type="button">Lock console</button>
+                <button class="logout-btn" id="adminLogout" type="button">Log out</button>
+            </div>
+        </aside>
+
+        <main class="admin-main">
+            <header class="admin-topbar">
+                <h1 id="adminTitle">Overview</h1>
+                <div style="display:flex;gap:.5rem;align-items:center">
+                    <span class="admin-env" id="envFlags"></span>
+                    <button class="btn-soft btn-sm" data-refresh type="button">Refresh</button>
+                </div>
+            </header>
+
+            <div class="admin-body">
+                <section class="admin-panel active" id="panel-overview"></section>
+                <section class="admin-panel" id="panel-users"></section>
+                <section class="admin-panel" id="panel-payments"></section>
+                <section class="admin-panel" id="panel-settings"></section>
+                <section class="admin-panel" id="panel-codes"></section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Code gate. Covers the whole console until a code is redeemed, so an
+         admin password on its own never opens this page. -->
+    <div class="code-gate" id="codeGate" hidden>
+        <form class="code-card" id="codeForm" autocomplete="off">
+            <img class="code-logo" src="/img/logo.svg" alt="">
+            <h1>Admin code required</h1>
+            <p class="muted">
+                You are signed in as an admin, but this console is locked. Enter one of the
+                single-use codes below to open it. Every attempt is written to the activity log.
+            </p>
+
+            <label class="field">
+                <span>Admin code</span>
+                <input id="codeInput" name="code" type="text" placeholder="SF-XXXX-XXXX"
+                       maxlength="40" required autofocus spellcheck="false" autocapitalize="characters">
+            </label>
+
+            <p class="form-error" id="codeError" hidden></p>
+
+            <button class="btn-primary" id="codeSubmit" type="submit">Open console</button>
+            <span class="save-state">Codes remaining: <b id="codesLeft">&mdash;</b></span>
+        </form>
+    </div>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - StudyFlow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="app-body">
+
+    <div class="app-shell">
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="side-head">
+                <span class="brand-logo" id="brandLogo" role="img" aria-label="StudyFlow">
+                    <img src="/img/logo.svg" alt="">
+                    <span class="logo-text">Study<span class="accent">Flow</span></span>
+                </span>
+                <button class="side-close" id="sideClose" type="button" aria-label="Close menu">&times;</button>
+            </div>
+
+            <nav class="side-nav">
+                <button class="side-link active" data-view="dashboard" type="button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="8.5" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="5.5" rx="1.5"/><rect x="13.5" y="12" width="7.5" height="9" rx="1.5"/><rect x="3" y="15" width="7.5" height="6" rx="1.5"/></svg>
+                    Dashboard
+                </button>
+                <button class="side-link" data-view="planner" type="button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="17" rx="2.5"/><path d="M8 2.5v4M16 2.5v4M3 10h18"/><path d="m9 15 2 2 4-4"/></svg>
+                    Planner
+                </button>
+                <button class="side-link" data-view="focus" type="button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg>
+                    Focus Timer
+                </button>
+                <button class="side-link" data-view="notes" type="button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 7.5l9 4.5 9-4.5L12 3Z"/><path d="M21 12.5 12 17l-9-4.5M21 17 12 21.5 3 17"/></svg>
+                    Notes
+                </button>
+                <button class="side-link" data-view="cards" type="button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="14" height="13" rx="2"/><path d="M6.5 3.5h13a2 2 0 0 1 2 2v11"/></svg>
+                    Flashcards
+                </button>
+<button class="side-link" data-view="exams" type="button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v3M18 3v3M4 9h16"/><rect x="3.5" y="5" width="17" height="16" rx="2.5"/></svg>
+                    Exams
+                </button>
+                <button class="side-link" data-view="quizzes" data-premium="quizzes" type="button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="2.5"/><path d="M8 8.5h8M8 12.5h5"/><path d="m9.5 16 1.8 1.8L15 14"/></svg>
+                    Quizzes
+                    <span class="premium-lock" id="lockQuizzes" hidden>&#9733;</span>
+                </button>
+                <button class="side-link" data-view="assistant" data-premium="assistant" type="button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 12.5a7.5 7.5 0 0 1-10.9 6.7L4 20.5l1.3-5.6A7.5 7.5 0 1 1 20.5 12.5Z"/><path d="M9.5 11h5M9.5 14h3"/></svg>
+                    AI Assistant
+                    <span class="premium-lock" id="lockAssistant" hidden>&#9733;</span>
+                </button>
+                <button class="side-link" data-view="settings" type="button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 1.8 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5V21a1.8 1.8 0 1 1-3.6 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a1.8 1.8 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1H3a1.8 1.8 0 1 1 0-3.6h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1A1.8 1.8 0 1 1 7 4.9l.1.1a1.6 1.6 0 0 0 1.8.3h.1a1.6 1.6 0 0 0 1-1.5V3a1.8 1.8 0 1 1 3.6 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a1.8 1.8 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8v.1a1.6 1.6 0 0 0 1.5 1h.1a1.8 1.8 0 1 1 0 3.6h-.1a1.6 1.6 0 0 0-1.5 1Z"/></svg>
+                    Settings
+                </button>
+                <a class="side-link" href="/premium.html" id="upgradeLink" hidden>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.7l5.9-.8L12 3.5Z"/></svg>
+                    Upgrade to Premium
+                </a>
+                <button class="side-link" id="adminLink" hidden type="button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2 4.5 6.4v5.2c0 4.4 3 8.4 7.5 9.4 4.5-1 7.5-5 7.5-9.4V6.4L12 3.2Z"/><path d="m9 12 2.2 2.2L15.2 10"/></svg>
+                    Admin
+                </button>
+            </nav>
+
+            <div class="side-foot">
+                <div class="side-user">
+                    <span class="avatar" id="userAvatar">S</span>
+                    <div class="side-user-text">
+                        <strong id="userName">Loading</strong>
+                        <span id="userEmail"></span>
+                    </div>
+                </div>
+                <button class="logout-btn" id="logoutBtn" type="button">Log out</button>
+            </div>
+        </aside>
+
+        <div class="side-scrim" id="sideScrim"></div>
+
+        <!-- Main -->
+        <main class="main">
+            <header class="topbar">
+                <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="topbar-title">
+                    <h1 id="viewTitle">Dashboard</h1>
+                    <p id="viewSub">Here's how your study is going.</p>
+                </div>
+                <div class="topbar-streak" id="topbarStreak" hidden>
+                    <span class="flame">&#128293;</span>
+                    <strong id="streakCount">0</strong>
+                    <span>day streak</span>
+                </div>
+                <button class="theme-toggle" id="themeToggle" type="button" title="Change theme">
+                    <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/>
+                    </svg>
+                    <span class="tt-label" id="themeLabel">Auto</span>
+                </button>
+            </header>
+
+            <div class="views">
+                <section class="view active" id="view-dashboard"></section>
+                <section class="view" id="view-planner"></section>
+                <section class="view" id="view-focus"></section>
+                <section class="view" id="view-notes"></section>
+                <section class="view" id="view-cards"></section>
+                <section class="view" id="view-exams"></section>
+                <section class="view" id="view-quizzes"></section>
+                <section class="view" id="view-assistant"></section>
+                <section class="view" id="view-settings"></section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Admin code prompt. Redeeming here means the console opens straight
+         into the data, with no failed page load when the code is wrong. -->
+    <div class="modal-scrim" id="adminGate" hidden>
+      <form class="code-card" id="adminGateForm" autocomplete="off">
+        <img class="code-logo" src="/img/logo.svg" alt="">
+        <h2>Enter an admin code</h2>
+        <p class="muted">
+          The console is locked. Type one of your single-use codes to open it.
+        </p>
+
+        <label class="field">
+          <span>Admin code</span>
+          <input id="adminGateInput" type="text" placeholder="SF-XXXX-XXXX" maxlength="40"
+                 required spellcheck="false" autocapitalize="characters">
+        </label>
+
+        <p class="form-error" id="adminGateError" hidden></p>
+
+        <div class="code-card-actions">
+          <button class="btn-soft" type="button" id="adminGateCancel">Cancel</button>
+          <button class="btn-primary" type="submit" id="adminGateSubmit">Open console</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/pwa.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/views/dashboard.js"></script>
+    <script src="js/views/planner.js"></script>
+    <script src="js/views/focus.js"></script>
+    <script src="js/views/notes.js"></script>
+    <script src="js/views/cards.js"></script>
+    <script src="js/views/exams.js"></script>
+    <script src="js/views/quizzes.js"></script>
+    <script src="js/views/assistant.js"></script>
+    <script src="js/views/settings.js"></script>
+    <script>window.App.start();</script>
+</body>
+</html>

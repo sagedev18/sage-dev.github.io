@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose a new password - StudyFlow</title>
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" href="/icons/icon-192.png">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="auth-body">
+
+    <button class="theme-toggle" id="themeToggle" type="button" style="position:fixed;top:16px;right:16px;z-index:50">
+        <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4.2"/>
+            <path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/>
+        </svg>
+        <span class="tt-label" id="themeLabel">Auto</span>
+    </button>
+
+    <div class="auth-card" style="max-width:440px;width:100%">
+        <div style="text-align:center;margin-bottom:1.6rem">
+            <img src="/img/logo.svg" alt="" style="width:56px;height:56px;margin:0 auto 1rem">
+            <h1 style="font-size:1.35rem;font-weight:600;color:var(--ink)">Choose a new password</h1>
+            <p class="save-state" style="margin-top:.4rem">Pick something you have not used before.</p>
+        </div>
+
+        <div class="card">
+            <form id="resetForm">
+                <div class="field">
+                    <label for="newPassword">New password</label>
+                    <input id="newPassword" type="password" autocomplete="new-password" placeholder="At least 8 characters" required minlength="8">
+                    <small class="hint">At least 8 characters.</small>
+                </div>
+
+                <div class="field">
+                    <label for="confirmPassword">Confirm new password</label>
+                    <input id="confirmPassword" type="password" autocomplete="new-password" required minlength="8">
+                </div>
+
+                <p class="form-error" id="resetError" hidden></p>
+                <p class="form-error" id="resetOk" hidden style="background:var(--green-soft);color:var(--green)"></p>
+
+                <button class="btn-primary btn-block" id="resetSubmit" type="submit">Save new password</button>
+            </form>
+        </div>
+
+        <p class="auth-switch">
+            <a class="link-btn" href="/index.html">Back to log in</a>
+        </p>
+    </div>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/theme.js"></script>
+    <script>
+      (function () {
+        const toggle = document.getElementById('themeToggle');
+        const label = document.getElementById('themeLabel');
+        const icon = document.getElementById('themeIcon');
+        const MOON = '<path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>';
+
+        function paint() {
+          const c = Theme.current();
+          label.textContent = c[0].toUpperCase() + c.slice(1);
+          icon.innerHTML = Theme.effective() === 'dark' ? MOON : '';
+        }
+        toggle.addEventListener('click', () => { Theme.cycle(); paint(); });
+        paint();
+
+        const token = new URLSearchParams(window.location.search).get('token');
+        const form = document.getElementById('resetForm');
+        const err = document.getElementById('resetError');
+        const ok = document.getElementById('resetOk');
+        const btn = document.getElementById('resetSubmit');
+
+        if (!token) {
+          err.textContent = 'This link is missing its reset token. Request a new one from the log in page.';
+          err.hidden = false;
+          btn.disabled = true;
+        }
+
+        form.addEventListener('submit', async (event) => {
+          event.preventDefault();
+          err.hidden = true;
+          ok.hidden = true;
+
+          const pw = document.getElementById('newPassword').value;
+          const confirm = document.getElementById('confirmPassword').value;
+
+          if (pw.length < 8) {
+            err.textContent = 'Your password needs to be at least 8 characters.';
+            err.hidden = false;
+            return;
+          }
+          if (pw !== confirm) {
+            err.textContent = 'The two passwords do not match.';
+            err.hidden = false;
+            return;
+          }
+
+          btn.disabled = true;
+          btn.textContent = 'Saving...';
+
+          try {
+            await api.post('/auth/reset-password', { token, password: pw });
+            ok.textContent = 'Password updated. Taking you to log in...';
+            ok.hidden = false;
+            btn.textContent = 'Done';
+            setTimeout(() => { window.location.href = '/index.html'; }, 1600);
+          } catch (e) {
+            err.textContent = e.message;
+            err.hidden = false;
+            btn.disabled = false;
+            btn.textContent = 'Save new password';
+          }
+        });
+      })();
+    </script>
+</body>
+</html>
